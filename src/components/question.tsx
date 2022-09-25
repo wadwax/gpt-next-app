@@ -55,7 +55,9 @@ export default function Question() {
         予測
       </Button>
       {choices.length > 0 &&
-        choices.map((choice, idx) => <Result key={idx} text={choice.text} />)}
+        choices.map((choice, idx) => (
+          <Result key={idx} text={choice.text.split("Q:")[0]} />
+        ))}
     </Box>
   );
 }
