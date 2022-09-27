@@ -16,8 +16,9 @@ export default async function handler(
     topP: 1,
     presencePenalty: 0.3,
     frequencyPenalty: 0.5,
-    bestOf: 3,
-    n: 3,
+    bestOf: req.body.n,
+    n: req.body.n,
+    stop: ["Human:", "Ikumi:"],
   });
   res.status(200).json(gptResponse.data.choices);
 }

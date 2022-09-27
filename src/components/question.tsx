@@ -14,6 +14,8 @@ export default function Question() {
     setTemperature,
     maxTokens,
     setMaxTokens,
+    n,
+    setN,
     predict,
     choices,
     loading,
@@ -26,6 +28,15 @@ export default function Question() {
       autoComplete="off"
     >
       <Loading open={loading} />
+      <Slider
+        className="w-full max-w-sm"
+        label="サンプル数"
+        value={n}
+        setValue={setN}
+        max={3}
+        min={1}
+        step={1}
+      />
       <Slider
         className="w-full max-w-sm"
         label="想像力"
